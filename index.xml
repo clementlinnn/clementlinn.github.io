@@ -2,9 +2,9 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clement&#39;s CodeNote</title>
-    <link>https://clementlinnn.github.io/</link>
+    <link>https://clementlinn.github.io/</link>
     <description>Recent content on Clement&#39;s CodeNote</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-tw</language><atom:link href="https://clementlinnn.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-tw</language><atom:link href="https://clementlinn.github.io/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

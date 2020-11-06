@@ -5,6 +5,25 @@
     <link>https://clementlinnn.github.io/tags/</link>
     <description>Recent content in Tags on Clement&#39;s CodeNote</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-tw</language><atom:link href="https://clementlinnn.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-tw</language>
+    <lastBuildDate>Thu, 29 Oct 2020 00:42:41 +0800</lastBuildDate><atom:link href="https://clementlinnn.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>appium</title>
+      <link>https://clementlinnn.github.io/tags/appium/</link>
+      <pubDate>Thu, 29 Oct 2020 00:42:41 +0800</pubDate>
+      
+      <guid>https://clementlinnn.github.io/tags/appium/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>testing</title>
+      <link>https://clementlinnn.github.io/tags/testing/</link>
+      <pubDate>Thu, 29 Oct 2020 00:42:41 +0800</pubDate>
+      
+      <guid>https://clementlinnn.github.io/tags/testing/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

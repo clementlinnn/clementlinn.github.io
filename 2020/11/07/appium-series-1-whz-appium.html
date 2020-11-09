@@ -133,6 +133,7 @@
   <ul>
     <li>
       <ul>
+        <li><a href="#whaz-appium">Whaz Appium</a></li>
         <li><a href="#安裝流程與設定">安裝流程與設定</a></li>
       </ul>
     </li>
@@ -192,13 +193,16 @@
         
         <div class="post-content">
             <p>content/posts/2020-11-07-appium-series-1-whz-appium.md</p>
-<!-- raw HTML omitted -->
+<p>
+        <img class="mx-auto" alt="header" src="./images/appium.png" />   
+    </p>
 <p>如果你老闆或PM開出以下需求：</p>
 <p><strong>1、一台電腦控制多裝置(實機或模擬器)</strong></p>
 <p><strong>2、能以腳本控制執行測試</strong></p>
 <p><strong>3、甚至要在只有apk檔的情況下進行測試</strong></p>
 <p>只有滿足上任一項目，你就可以考慮使用Appium來自動化測試。</p>
-<p>首先介紹一下它，Appium 是一套開源的自動測試工具，可以用來測試原生(Native)、混合(Hybrid)、mobile web 三種行動應用開發。</p>
+<h3 id="whaz-appium">Whaz Appium</h3>
+<p>Appium 是一套開源的自動測試工具，可以用來測試原生(Native)、混合(Hybrid)、mobile web 三種行動應用開發。</p>
 <blockquote>
 <p>Appium 是基於以下的四個理念設計，來滿足手機平台自動化的要求的；</p>
 <ol>
@@ -208,10 +212,12 @@
 <li>一個手機測試自動化框架應該是開源的，無論是在精神上、實際上、還是名義上！</li>
 </ol>
 </blockquote>
-<!-- raw HTML omitted -->
+<p>
+        <img class="mx-auto" alt="appium" src="./images/appium_struct.png" />   
+    </p>
 <p>它實質上是一個HTTP Web Server，能管理多個WebDriver sessions，並提供Restful API，測試人員能將腳本藉由API交由Appium執行測試。測試腳本可自行選擇語言來編寫測試範例(C#、.NET、Java、Node、Perl、PHP、Python、Ruby..等)</p>
-<p><a href="https://www.appcoda.com.tw/automated-ui-testing-appium/">Appium info Ref.</a>
-<a href="http://appium.io/docs/en/about-appium/intro/">官網介紹</a></p>
+<p><a href="https://www.appcoda.com.tw/automated-ui-testing-appium/">Appium info Ref.</a></p>
+<p><a href="http://appium.io/docs/en/about-appium/intro/">官網介紹</a></p>
 <h3 id="安裝流程與設定">安裝流程與設定</h3>
 <h4 id="你需要">你需要：</h4>
 <h5 id="1-jdkhttpswwworaclecomtwjavatechnologiesjavasejavase-jdk8-downloadshtml">1, <a href="https://www.oracle.com/tw/java/technologies/javase/javase-jdk8-downloads.html">JDK</a></h5>

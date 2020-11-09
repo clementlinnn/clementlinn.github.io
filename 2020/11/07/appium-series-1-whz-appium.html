@@ -129,7 +129,15 @@
 <div class="post-toc" style="position: absolute; top: 188px;">
     <h2 class="post-toc-title">文章目录</h2>
     <div class="post-toc-content">
-        <nav id="TableOfContents"></nav>
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#安裝流程與設定">安裝流程與設定</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
     </div>
 </div>
 <script type="text/javascript">
@@ -183,8 +191,95 @@
         </div>
         
         <div class="post-content">
-            <!-- raw HTML omitted -->
-<p>想讓App自動運行並完成某項任務，需要藉助自動化測試框架來達成，但往往我們只有目標app的安裝檔(apk, ipa&hellip;)，Appium可以在沒有原始碼的情況下，找出UI元件屬性，以及透過腳本驅動行動裝置測試。本文將介紹Appium安裝、用法，測試腳本選用Python撰寫。</p>
+            <p>content/posts/2020-11-07-appium-series-1-whz-appium.md</p>
+<!-- raw HTML omitted -->
+<p>如果你老闆或PM開出以下需求：</p>
+<p><strong>1、一台電腦控制多裝置(實機或模擬器)</strong></p>
+<p><strong>2、能以腳本控制執行測試</strong></p>
+<p><strong>3、甚至要在只有apk檔的情況下進行測試</strong></p>
+<p>只有滿足上任一項目，你就可以考慮使用Appium來自動化測試。</p>
+<p>首先介紹一下它，Appium 是一套開源的自動測試工具，可以用來測試原生(Native)、混合(Hybrid)、mobile web 三種行動應用開發。</p>
+<blockquote>
+<p>Appium 是基於以下的四個理念設計，來滿足手機平台自動化的要求的；</p>
+<ol>
+<li>不應該為了自動化測試而以任何形式去重新編譯或修改你的 App；</li>
+<li>不應該固定於一門特定的語言或框架中來編寫和運行你的測試；</li>
+<li>測試自動化 API 時，不應該重頭編寫一個手機測試框架；</li>
+<li>一個手機測試自動化框架應該是開源的，無論是在精神上、實際上、還是名義上！</li>
+</ol>
+</blockquote>
+<!-- raw HTML omitted -->
+<p>它實質上是一個HTTP Web Server，能管理多個WebDriver sessions，並提供Restful API，測試人員能將腳本藉由API交由Appium執行測試。測試腳本可自行選擇語言來編寫測試範例(C#、.NET、Java、Node、Perl、PHP、Python、Ruby..等)</p>
+<p><a href="https://www.appcoda.com.tw/automated-ui-testing-appium/">Appium info Ref.</a>
+<a href="http://appium.io/docs/en/about-appium/intro/">官網介紹</a></p>
+<h3 id="安裝流程與設定">安裝流程與設定</h3>
+<h4 id="你需要">你需要：</h4>
+<h5 id="1-jdkhttpswwworaclecomtwjavatechnologiesjavasejavase-jdk8-downloadshtml">1, <a href="https://www.oracle.com/tw/java/technologies/javase/javase-jdk8-downloads.html">JDK</a></h5>
+<h5 id="2-android-sdkhttpsdeveloperandroidcomstudio-xcodehttpsdeveloperapplecomxcode">2, <a href="https://developer.android.com/studio">Android SDK</a>/ <a href="https://developer.apple.com/xcode/">XCode</a></h5>
+<p>依照你想測試的平台來選擇。</p>
+<h5 id="3-appium-desktophttpsgithubcomappiumappium-desktopreleases">3, <a href="https://github.com/appium/appium-desktop/releases">Appium desktop</a></h5>
+<ul>
+<li>用來設定及啟重Appium中最重要的Server，主要用來監聽移動設備(實機或模擬器)，將不用語言編寫而成的腳本解析，然後運行測試。</li>
+</ul>
+<h5 id="4-測試腳本所用語言pythonjsjava等">4, 測試腳本所用語言(Python、JS、Java&hellip;等)</h5>
+<ul>
+<li>Appium Client 是对 webdriver 原生 API 的一些扩展和封装。它可以帮助我们更容易的写出用例，写出更好懂的用例</li>
+</ul>
+<p><a href="https://www.python.org/downloads/">Python下載</a></p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#998;font-style:italic"># 本範例使用python</span>
+pip3 install Appium<span style="color:#000;font-weight:bold">-</span>Python<span style="color:#000;font-weight:bold">-</span>Client
+</code></pre></td></tr></table>
+</div>
+</div><p>Appium-Python-Client封裝了對Appium server端的api，透過它能加速開發過程。</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">pip install <span style="color:#000;font-weight:bold">-</span>U pytest
+</code></pre></td></tr></table>
+</div>
+</div><p>pytest是Python的測試框架，支持平行化測試，滿足我們一對多裝置的測試需求，使用上也簡單。</p>
+<p><a href="http://appium.io/downloads.html">其它語言Appium Client下載</a></p>
+<h5 id="5-環境設定">5, 環境設定</h5>
+<p>Appium需要設定JDK以及Android SDK路徑</p>
+<div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vim ~/.bash_profile
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#0086b3">export</span> <span style="color:#008080">JAVA_HOME</span><span style="color:#000;font-weight:bold">=</span>/Library/Java/JavaVirtualMachines/jdk-11.0.1.jdk/Contents/Home
+<span style="color:#0086b3">export</span> <span style="color:#008080">PATH</span><span style="color:#000;font-weight:bold">=</span><span style="color:#008080">$JAVA_HOME</span>/bin:<span style="color:#008080">$PATH</span>
+<span style="color:#0086b3">export</span> <span style="color:#008080">ANDROID_HOME</span><span style="color:#000;font-weight:bold">=</span>/Users/sharadgupta/Documents/sdk
+<span style="color:#0086b3">export</span> <span style="color:#008080">PATH</span><span style="color:#000;font-weight:bold">=</span><span style="color:#d14">${</span><span style="color:#008080">PATH</span><span style="color:#d14">}</span>:<span style="color:#008080">$ANDROID_HOME</span>/tools:<span style="color:#008080">$ANDROID_HOME</span>/platform-tools
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4">
+<table style="border-spacing:0;padding:0;margin:0;border:0;width:auto;overflow:auto;display:block;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code><span style="margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#0086b3">source</span> ~/.bash_profile
+</code></pre></td></tr></table>
+</div>
+</div><p>完成以上步驟後，你準備好開始寫你第一個測試程式了！下一篇文章將會介紹如何使用Appium Destop完成測試腳本。</p>
 
         </div>
 
